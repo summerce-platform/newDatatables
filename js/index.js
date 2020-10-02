@@ -239,25 +239,7 @@
             };
           }
   }
-  $('#datatable thead tr').clone(true).appendTo( '#datatable thead' );
-  $('#datatable thead tr:eq(1) th').each( function (i) {
-      var title = $(this).text();
-      $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-
-      $( 'input', this ).on( 'keyup change', function () {
-          if ( table.column(i).search() !== this.value ) {
-              table
-                  .column(i)
-                  .search( this.value )
-                  .draw();
-          }
-      } );
-  } );
-
-  var table = $('#datatable').DataTable( {
-      orderCellsTop: true,
-      fixedHeader: true
-  } );
+        
 
         // Destroy the old table.
         if (tableReference !== null) {
@@ -272,6 +254,7 @@
 
         // Read the Settings and create an array for the Buttons.
         var buttons = [];
+        buttons.push('colvis');
         var clipboard = tableau.extensions.settings.get("export-clipboard");
         if (clipboard == "Y") {
           buttons.push('copy');
