@@ -87,6 +87,31 @@
     if (column_order != undefined && column_order.length > 0) {
       var column_names_array = tableau.extensions.settings.get("column_names").split("|");
       var column_order_array = tableau.extensions.settings.get("column_order").split("|");
+
+      var selectColumnButtons = () => {
+        var targetArea2 = $("#select-column");
+        // 이미 옵션이 존재할 경우 삭제
+        targetArea2.empty();
+      
+       $("#select-column").find('option').remove();
+
+        for (var i = 0; i < column_names_array.length; i++){
+          $("#select-column").append('<option value="'+column_names_array+'">'+column_names_array+'</option>');
+
+        }
+        $("#submitCol").click(function(){
+          var myColumn = $("#select-column").val();
+      
+          console.log(myColumn);
+          var column_names_array= column_names_array.filter(column=>
+            myColumn.includes(column_names_array));
+      
+
+      
+        })
+      
+      };
+      selectColumnButtons();
       $("#sort-it ol").text("");
       for (var i = 0; i < column_names_array.length; i++) {
         //alert(column_names_array[i] + " : " + column_order_array[i]);
