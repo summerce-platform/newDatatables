@@ -216,24 +216,31 @@
             tableData[i][j] = worksheetData[i][column_order[j]-1].formattedValue;
           }
         }
+        var imageTag = (obj) => {
+          const _start = "<img ";
+          const _src = "src='" + obj.src + "' ";
+          const _class = obj.tagClass !== null ? "class='" + obj.tagClass + "' " : "";
+          const _style =
+            obj.tagStyle !== null ? "style='" + obj.tagStyle + "'/>" : "/>";
+      
+          return _start + _src + _class + _style;
+        };
 
-
-        data.forEach((title,idx) => {
-     
+        for (var idx =0 ; idx< data.length; idx++) {
           if (data[idx].title.includes('img')===true) {
-
+  
             col["render"] = function (data, type, row) {
-              console.log(data);
               if (type === "display") {
                 return imageTag({
                   src: data,
-                  tagStyle: "height: " + meta.size + "px;",
+                  tagStyle: "height : 60px;",
                 });
               } else return data;
             };
           }
+  }
 
-        });
+
         // Destroy the old table.
         if (tableReference !== null) {
           tableReference.destroy();
