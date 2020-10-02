@@ -96,7 +96,7 @@
        $("#select-column").find('option').remove();
 
         for (var i = 0; i < column_names_array.length; i++){
-          $("#select-column").append('<option value="'+column_names_array+'">'+column_names_array+'</option>');
+          $("#select-column").append('<option value="'+column_names+'">'+column_names+'</option>');
 
         }
         $("#submitCol").click(function(){
@@ -104,7 +104,7 @@
       
           console.log(myColumn);
           var column_names_array= column_names_array.filter(column=>
-            myColumn.includes(column_names_array));
+            myColumn.includes(column_names));
       
 
       
