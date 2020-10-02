@@ -539,21 +539,25 @@ button.dt-button,
 div.dt-button,
 a.dt-button,
 input.dt-button {
+  box-shadow: 2px 2px 1px lightgrey;
+  color : white;
   position: relative;
   display: inline-block;
   box-sizing: border-box;
   margin-right: 0.333em;
   margin-bottom: 0.333em;
   padding: 0.5em 1em;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 2px;
+  border: none;
+  border-radius: .25em;
   cursor: pointer;
-  font-size: 0.88em;
+  font-size: 0.9em;
+  font-weight: bold;
   line-height: 1.6em;
   color: black;
   white-space: nowrap;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #515da6;
+  
   /* Fallback */
   background: -webkit-linear-gradient(top, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
   /* Chrome 10+, Saf5.1+, iOS 5+ */
