@@ -551,7 +551,7 @@ input.dt-button {
   border-radius: .25em;
   cursor: pointer;
   font-size: 0.9em;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 1.6em;
   white-space: nowrap;
   overflow: hidden;
