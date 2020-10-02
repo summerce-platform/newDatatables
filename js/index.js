@@ -216,7 +216,10 @@
             tableData[i][j] = worksheetData[i][column_order[j]-1].formattedValue;
           }
         }
-        console.log(data.title);
+        data.forEach((title,idx) => {
+          ///select box에 컬럼 넣기
+              console.log(data[idx].title);
+        });
         // Destroy the old table.
         if (tableReference !== null) {
           tableReference.destroy();
