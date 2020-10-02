@@ -87,32 +87,6 @@
     if (column_order != undefined && column_order.length > 0) {
       var column_names_array = tableau.extensions.settings.get("column_names").split("|");
       var column_order_array = tableau.extensions.settings.get("column_order").split("|");
-      selectColumnButtons();
-      var selectColumnButtons = () => {
-        var targetArea2 = $("#select-column");
-        // 이미 옵션이 존재할 경우 삭제
-        targetArea2.empty();
-        console.log(column_names_array);
-        console.log(column_names);
-       $("#select-column").find('option').remove();
-
-        for (var i = 0; i < column_names_array.length; i++){
-          $("#select-column").append('<option value="'+column_names_array[i]+'">'+column_names_array[i]+'</option>');
-
-        }
-        $("#submitCol").click(function(){
-          var myColumn = $("#select-column").val();
-      
-          console.log(myColumn);
-          console.log(column_names);
-          var column_names_array= column_names_array.filter(column=>
-            myColumn.includes(column_names));
-      
-
-      
-        })
-      
-      };
 
       $("#sort-it ol").text("");
       for (var i = 0; i < column_names_array.length; i++) {
@@ -129,6 +103,13 @@
           $("body").removeClass("dragging");
         }
       });
+      $("#sort-it ol").selectable({
+        stop : function(item){
+          var result = $( "#test1" ).empty();
+          var result = $(item).val();      
+          $("#test1").text(result);
+        }
+      })
     }
 
     // Initialise the tabs, select and attach functions to buttons.
