@@ -96,13 +96,14 @@
        $("#select-column").find('option').remove();
 
         for (var i = 0; i < column_names_array.length; i++){
-          $("#select-column").append('<option value="'+column_names+'">'+column_names+'</option>');
+          $("#select-column").append('<option value="'+column_names_array[i]+'">'+column_names_array[i]+'</option>');
 
         }
         $("#submitCol").click(function(){
           var myColumn = $("#select-column").val();
       
           console.log(myColumn);
+          console.log(column_names);
           var column_names_array= column_names_array.filter(column=>
             myColumn.includes(column_names));
       
