@@ -228,8 +228,8 @@
 
         for (var idx =0 ; idx< data.length; idx++) {
           if (data[idx].title.includes('img')===true) {
-  
-            col["render"] = function (data, type, row) {
+            console.log(data[idx]);
+            data[idx]["render"] = function (data, type, row) {
               if (type === "display") {
                 return imageTag({
                   src: data,
