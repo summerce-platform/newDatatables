@@ -6,7 +6,7 @@
   integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- DataTables CSS 파일 -->
     <link rel="stylesheet" type="text/css"
-      href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+      href="css/dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
@@ -16,7 +16,9 @@
 
     </table>
     <div id="configure" hide>
-        <h3>구성 버튼을 눌러 확장 설정 </h3>
+        <div style="display: flex;"><div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div></div>
         <!-- <ul>
             <li>Click on the down arrow in the Extension menu (look right)</li>
 
