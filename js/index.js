@@ -153,7 +153,6 @@
         if (print == "Y") {
           buttons.push('print');
         }
-        console.log(data);
       // 만약에 이미지 경로 컬럼이라면
       // if (data) {
       //   // 이미지를 표시하도록 하고
@@ -170,6 +169,8 @@
         // If there are 1 or more Export options ticked, then we will add the dom: 'Bfrtip'
         // Else leave this out.
         if (buttons.length > 0) {
+          console.log(data);
+
           tableReference = $('#datatable').DataTable({
             dom: 'Bfrtip',
             data: tableData,
