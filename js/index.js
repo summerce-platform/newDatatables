@@ -280,7 +280,7 @@
         // Else leave this out.
         if (buttons.length > 0) {
           tableReference = $('#datatable').DataTable({
-            dom: 'Bfrtip',
+            dom: '<"float-right"B>rt<"float-left"p><"float-right"f>',
             data: tableData,
             columns: data,
             responsive: true,
