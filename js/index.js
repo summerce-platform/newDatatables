@@ -216,10 +216,26 @@
             tableData[i][j] = worksheetData[i][column_order[j]-1].formattedValue;
           }
         }
-        data.forEach((title,idx) => {
-          ///select box에 컬럼 넣기
-              console.log(data[idx].title);
-        });
+
+        if (data[idx].title.includes('img')===true) {
+
+          col["render"] = function (data, type, row) {
+            console.log(data);
+            if (type === "display") {
+              return imageTag({
+                src: data,
+                tagStyle: "height: " + meta.size + "px;",
+              });
+            } else return data;
+          };
+        }
+        // data.forEach((title,idx) => {
+     
+        //   if(data[idx].title.includes('img')===true){
+        //     return 
+        //   }
+
+        // });
         // Destroy the old table.
         if (tableReference !== null) {
           tableReference.destroy();
