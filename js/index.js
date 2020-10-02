@@ -216,7 +216,7 @@
             tableData[i][j] = worksheetData[i][column_order[j]-1].formattedValue;
           }
         }
-
+        console.log(data);
         // Destroy the old table.
         if (tableReference !== null) {
           tableReference.destroy();
