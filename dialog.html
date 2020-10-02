@@ -10,7 +10,7 @@
     <main>
         <div class="row">
             <div class="col s12 header">
-                <h5 class="valign-wrapper"><img class="logo" src="img/Tableau-Magic-Logo-White.png"> DataTables Extension</h5>
+                <h5 class="valign-wrapper" style="background-color: teal;">New Datatables</h5>
             </div>
 
             <div class="row">
@@ -54,16 +54,15 @@
                             </div>
                             <div class="col s6">
                                 <p>
-                                    Start by choosing the worksheet that your table will be based on, whether you want the underlying or summary data, and finally the number of records you want to be returned. These are mandatory fields.
+                                    기본 또는 요약 데이터를 원하는지 여부에 관계없이 테이블의 기반이 될 워크 시트를 선택하고 마지막으로 반환 할 레코드 수를 선택합니다. 필수 필드입니다.                                </p>
+                                <p>
+                                    <i>참고 : 현재 버전의 Extensions API에 따라 총 레코드 수는 기본 데이터에만 적용됩니다.</i>
                                 </p>
                                 <p>
-                                    <i>Note: As per the current version of the Extensions API the total number of records only applies to Underlying Data.</i>
+                                    이러한 선택을 마치면 다음 탭에서 가능한 열 목록을 볼 수 있습니다. 여기서 열을 재정렬하고 열 제목을 사용자 지정할 수 있습니다.
                                 </p>
                                 <p>
-                                    Once you have made these selections you will be able to see a list of possible columns in the next tab where you will be able to reorder the columns and customise your column headings.
-                                </p>
-                                <p>
-                                    <i>Note: If you update your worksheet, add or remove data items, you will have to come back her to reconfigure the extension.</i>
+                                    <i>참고 : 워크 시트를 업데이트하거나 데이터 항목을 추가 또는 제거하는 경우 확장 프로그램을 다시 구성하려면 다시 돌아와야합니다.</i>
                                 </p>
                             </div>
                         </div>
@@ -80,13 +79,13 @@
                         </div>
                         <div class="col s6">
                             <p>
-                                Drag and drop the columns to reorder. Click on the middle of the column to change the column name or leave blank to keep the Tableau Data Source Name.
+                                재정렬 할 열을 끌어서 놓습니다. 열 이름을 변경하려면 열 중간을 클릭하고 Tableau 데이터 원본 이름을 유지하려면 비워 둡니다.
                             </p>
                             <div role="presentation"><br></div>
                             <hr>
                             <label class="mt-lg-2">
                                 <span class="option-header">
-                                    Number of Columns that make the Row Header
+                                    행 머리글을 구성하는 열 수
                                 </span>
                                 <select id="col-count-row-header">
                                     <option value="0">None</option>
@@ -101,22 +100,22 @@
                             <label>
                                 <input type="checkbox" class="filled-in" id="compact" />
                                 <span class="option-header">
-                                    Use Compact Layout
+                                    컴팩트 레이아웃 사용
                                 </span>
                             </label>
                             <p class="option-description">
-                                Check compact layout to reduce the amount of white-space to increase the information density on screen.
+                                화면의 정보 밀도를 높이려면 공백의 양을 줄이려면 컴팩트 레이아웃을 선택하세요
                             </p>
                         </div>
                         <div class="col s6">
                             <label>
                                 <input type="checkbox" class="filled-in" id="hover" />
                                 <span class="option-header">
-                                    Row highlighting on Hover
+                                    hover 사용으로 행 선택 강조
                                 </span>
                             </label>
                             <p class="option-description">
-                                Check Row highlighting on Hover to instructs DataTables' styling to highlight a row when the mouse is hovered over it.
+                                Hover에서 행 강조 표시를 선택하여 마우스를 그 위로 가져갈 때 행을 강조 표시하도록 DataTables의 스타일을 지정합니다.
                             </p>
                         </div>
                     </div>
@@ -125,22 +124,22 @@
                             <label>
                                 <input type="checkbox" class="filled-in" id="nowrap" />
                                 <span class="option-header">
-                                    Wrap Text
+                                    줄바꿈 설정
                                 </span>
                             </label>
                             <p class="option-description">
-                                Check Wrap Text to instructs DataTables' styling to wrap your text in your cells.
+                                텍스트 줄 바꿈을 선택하면 DataTables의 스타일이 셀에서 텍스트를 줄 바꿈하도록 변경됩니다
                             </p>
                         </div>
                         <div class="col s6">
                             <label>
                                 <input type="checkbox" class="filled-in" id="order-column" />
                                 <span class="option-header">
-                                    Highlight Sort Column
+                                    정렬되어있는 열 강조하기
                                 </span>
                             </label>
                             <p class="option-description">
-                                Check Highlight Sort Column to instructs DataTables' styling to highlight column when it is used for sorting.
+                                정렬에 사용될 때 DataTables의 스타일이 열을 강조 표시하도록하려면 정렬 열 강조 표시를 선택합니다.
                             </p>
                         </div>
                     </div>
@@ -149,22 +148,22 @@
                             <label>
                                 <input type="checkbox" class="filled-in" id="row-border" />
                                 <span class="option-header">
-                                    Show Row Border
+                                    행 테두리 표시
                                 </span>
                             </label>
                             <p class="option-description">
-                                Check Highlight Sort Column to instructs DataTables' styling to draw a line between rows.
+                                열 강조 표시를 선택하여 행 사이에 선을 그리도록 DataTable의 스타일을 지정합니다.
                             </p>
                         </div>
                         <div class="col s6">
                             <label>
                                 <input type="checkbox" class="filled-in" id="stripe" />
                                 <span class="option-header">
-                                    Show Row Striping
+                                    행 스트라이프 표시
                                 </span>
                             </label>
                             <p class="option-description">
-                                Check Show Row Striping to instructs DataTables' styling to alternate row colours.
+                                행 스트라이핑 표시를 선택하여 DataTable의 스타일을 행 색상을 대체합니다.
                             </p>
                         </div>
                     </div>
@@ -173,11 +172,11 @@
                             <label>
                                 <input type="checkbox" class="filled-in" id="include-table-name" />
                                 <span class="option-header">
-                                    Include Unique Table Name
+                                    고유한 테이블명 포함
                                 </span>
                             </label>
                             <p class="option-description">
-                                Check Include Unique Table Name to instruct DataTables to include the table name within the programmatic name of all controls. Should be checked if more than one DataTables Extension is being used within a Tableau Dashboard.
+                                고유 한 테이블 이름 포함을 선택하여 모든 컨트롤의 프로그래밍 방식 이름 내에 테이블 이름을 포함하도록 DataTables에 지시합니다. Tableau Dashboard 내에서 둘 이상의 DataTables Extension이 사용되고 있는지 확인해야합니다.
                             </p>
                         </div>
                         <div class="col s6"></div>
@@ -189,22 +188,22 @@
                             <label>
                                 <input type="checkbox" class="filled-in" id="export-clipboard" />
                                 <span class="option-header">
-                                    Enable Copy to Clipboard
+                                    클립보드 복사 활성화
                                 </span>
                             </label>
                             <p class="option-description">
-                                Check Enable Copy to Clipboard to enable this feature.
+                               클립보드 복사 기능을 활성화합니다
                             </p>
                         </div>
                         <div class="col s6">
                             <label>
                                 <input type="checkbox" class="filled-in" id="export-excel" />
                                 <span class="option-header">
-                                    Enable Save as Excel (XLSX)
+                                   엑셀 파일로 저장하기
                                 </span>
                             </label>
                             <p class="option-description">
-                                Check Enable Copy to Clipboard to enable this feature.
+                                엑셀 파일로 저장하기
                             </p>
                         </div>
                     </div>
@@ -213,22 +212,22 @@
                             <label>
                                 <input type="checkbox" class="filled-in" id="export-csv" />
                                 <span class="option-header">
-                                    Enable Save as CSV
+                                    CSV 포맷으로 저장하기
                                 </span>
                             </label>
                             <p class="option-description">
-                                Check Enable Save as CSV to enable this feature.
+                                CSV 다운로드 기능 제공
                             </p>
                         </div>
                         <div class="col s6">
                             <label>
                                 <input type="checkbox" class="filled-in" id="export-pdf" />
                                 <span class="option-header">
-                                    Enable Save as PDF
+                                    PDF로 저장
                                 </span>
                             </label>
                             <p class="option-description">
-                                Check Enable Save as PDF to enable this feature.
+                               PDF 저장 기능 활성화
                             </p>
                         </div>
                     </div>
@@ -237,12 +236,11 @@
                             <label>
                                 <input type="checkbox" class="filled-in" id="export-print" />
                                 <span class="option-header">
-                                    Enable Display a Print View
+                                  프린트 뷰 활성화
                                 </span>
                             </label>
                             <p class="option-description">
-                                Check Enable Display a Print View to enable this feature.
-                            </p>
+                                이 기능을 활성화하려면 인쇄보기 표시 활성화를 선택합니다.                            </p>
                         </div>
                     </div>
                 </div>
@@ -253,7 +251,7 @@
                                 Name:
                             </td>
                             <td class="option-header">
-                                DataTables Extension by Toan Hoang @thoang1000
+                                re-created by summerce
                             </td>
                         </tr>
                         <tr>
@@ -261,7 +259,7 @@
                                 Website:
                             </td>
                             <td class="option-header">
-                                www.tableaumagic.com
+                                
                             </td>
                         </tr>
                         <tr>
@@ -277,7 +275,6 @@
                                 Description:
                             </td>
                             <td class="option-header">
-                                The DataTable Extension was developed on Tableau Desktop 2018.2 and v1.0.0 of this Extension has been open sourced for the community to use, learn from, and improve upon.
                             </td>
                         </tr>
                         <tr>
@@ -285,7 +282,7 @@
                                 Repository:
                             </td>
                             <td class="option-header">
-                                https://github.com/tableaumagic/tableau-datatables-extension
+                               
                             </td>
                         </tr>
                         <tr>
@@ -311,11 +308,7 @@
     </main>
 </body>
    <!-- JQuery 이미 존재하면 필요 없음(부트스트랩 및 DataTables 라이브러리 요구사항) -->
-   <script
-   src="https://code.jquery.com/jquery-3.5.1.min.js"
-   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-   crossorigin="anonymous"
- ></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
  <!-- 부트스트랩이 이미 내장 되어 있으면 필요 없음 -->
  <script
