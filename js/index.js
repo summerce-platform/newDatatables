@@ -217,25 +217,23 @@
           }
         }
 
-        if (data[idx].title.includes('img')===true) {
 
-          col["render"] = function (data, type, row) {
-            console.log(data);
-            if (type === "display") {
-              return imageTag({
-                src: data,
-                tagStyle: "height: " + meta.size + "px;",
-              });
-            } else return data;
-          };
-        }
-        // data.forEach((title,idx) => {
+        data.forEach((title,idx) => {
      
-        //   if(data[idx].title.includes('img')===true){
-        //     return 
-        //   }
+          if (data[idx].title.includes('img')===true) {
 
-        // });
+            col["render"] = function (data, type, row) {
+              console.log(data);
+              if (type === "display") {
+                return imageTag({
+                  src: data,
+                  tagStyle: "height: " + meta.size + "px;",
+                });
+              } else return data;
+            };
+          }
+
+        });
         // Destroy the old table.
         if (tableReference !== null) {
           tableReference.destroy();
