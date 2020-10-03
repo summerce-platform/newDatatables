@@ -173,17 +173,19 @@
           targetArea2.empty();
 
           $("#select-column").find('option').remove();
-          worksheetColumns.forEach((_fieldName,_index) => {
+          var ncounter = 1;
+          worksheetColumns.forEach((current_value) => {
             ///select box에 컬럼 넣기
-              $("#select-column").append('<option value="'+worksheetColumns._fieldName._fieldName+'">'+worksheetColumns._fieldName._fieldName+'</option>');
+              $("#select-column").append('<option value="'+current_value.fieldName+'">'+current_value.fieldName+'</option>');
+              ncounter++;
           });
 
           $("#submitCol").click(function(){
           var myColumn = $("#select-column").val();
           console.log(myColumn);
           
-          worksheetColumns = worksheetColumns.filter(_fieldName=>
-            myColumn.includes(worksheetColumns._fieldName._fieldName));
+          // worksheetColumns = worksheetColumns.filter(_fieldName=>
+          //   myColumn.includes(worksheetColumns._fieldName._fieldName));
           })
 ///////////////////////////////////////////////////////////////////////////
 
