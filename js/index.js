@@ -83,8 +83,8 @@
       oAria: {
         sSortAscending: ': activate to sort column ascending'+(includeTableName ? ' on '+sheetName+' table' : ''),
         sSortDescending: ': activate to sort column descending'+(includeTableName ? ' on '+sheetName+' table' : ''),
-        decimal: ".",
-        thousands: ","
+        // decimal: ".",
+        // thousands: ","
       }
     };
 
