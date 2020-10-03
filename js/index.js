@@ -227,8 +227,9 @@
         };
 
         for (var idx =0 ; idx< data.length; idx++) {
+          console.log(data[idx]);
           if (data[idx].title.includes('img')===true) {
-            console.log(data[idx]);
+          
             data[idx]["render"] = function (data, type, row) {
               if (type === "display") {
                 return imageTag({
