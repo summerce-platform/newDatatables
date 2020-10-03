@@ -171,7 +171,7 @@
 
           var counter2=1;
           worksheetColumns.forEach(function () {
-            $("#select-column").append('<option value="'+worksheetColumns.fieldName+'">'+worksheetColumns.fieldName+'</option>');
+            $("#select-column").append('<option value="'+worksheetColumns._fieldName+'">'+worksheetColumns._fieldName+'</option>');
             counter2++;
           });
 
