@@ -168,9 +168,7 @@
           // 이미 옵션이 존재할 경우 삭제
           targetArea2.empty();
 
-          for (var i = 0; i < column_names_array.length; i++) {
-          //alert(column_names_array[i] + " : " + column_order_array[i]);
-          }
+
           var counter2=1;
           worksheetColumns.forEach(function (current_value) {
             $("#select-column").append('<option value="'+current_value.fieldName+'">'+current_value.fieldName+'</option>');
