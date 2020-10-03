@@ -87,7 +87,8 @@
     if (column_order != undefined && column_order.length > 0) {
       var column_names_array = tableau.extensions.settings.get("column_names").split("|");
       var column_order_array = tableau.extensions.settings.get("column_order").split("|");
-
+      console.log(column_names_array);
+      console.log(column_order_array);
       $("#sort-it ol").text("");
       for (var i = 0; i < column_names_array.length; i++) {
         //alert(column_names_array[i] + " : " + column_order_array[i]);
