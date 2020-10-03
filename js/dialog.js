@@ -103,13 +103,13 @@
           $("body").removeClass("dragging");
         }
       });
-      $("#sort-it ol").selectable({
-        stop : function(item){
-          var result = $( "#test1" ).empty();
-          var result = $(item).val();      
-          $("#test1").text(result);
-        }
-      })
+      // $("#sort-it ol").selectable({
+      //   stop : function(item){
+      //     var result = $( "#test1" ).empty();
+      //     var result = $(item).val();      
+      //     $("#test1").text(result);
+      //   }
+      // })
     }
 
     // Initialise the tabs, select and attach functions to buttons.
