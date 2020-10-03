@@ -170,15 +170,20 @@
 
           for (var i = 0; i < column_names_array.length; i++) {
           //alert(column_names_array[i] + " : " + column_order_array[i]);
-          $("#select-column").append('<option value="'+column_names_array[i]+'">'+column_names_array[i]+'</option>');
           }
+          var counter2=1;
+          worksheetColumns.forEach(function (current_value) {
+            $("#select-column").append('<option value="'+current_value.fieldName+'">'+current_value.fieldName+'</option>');
+            counter2++;
+          });
+
           $("#submitCol").click(function(){
           var myColumn = $("#select-column").val();
           console.log(myColumn);
-          console.log(column_names_array);
+          console.log(current_value.fieldName);
           // console.log(columns);
           // console.log(myColumn);
-          columns = columns.filter(column=>
+          worksheetColumns = worksheetColumns.filter(column=>
             myColumn.includes(column.fieldName));
 
           console.log("필터링후: "+columns);
