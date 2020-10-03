@@ -161,7 +161,7 @@
       // Note that for our purposes and to speed things up we only want 1 record.
       worksheet.getSummaryDataAsync({ maxRows: 1 }).then(function (sumdata) {
         var worksheetColumns = sumdata.columns;
-
+          console.log(worksheetColumns);
 
           ///
           var targetArea2 = $("#select-column");
