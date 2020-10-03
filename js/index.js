@@ -82,7 +82,9 @@
     var datatableLangObj = {
       oAria: {
         sSortAscending: ': activate to sort column ascending'+(includeTableName ? ' on '+sheetName+' table' : ''),
-        sSortDescending: ': activate to sort column descending'+(includeTableName ? ' on '+sheetName+' table' : '')
+        sSortDescending: ': activate to sort column descending'+(includeTableName ? ' on '+sheetName+' table' : ''),
+        decimal: ",",
+        thousands: "."
       }
     };
 
@@ -246,7 +248,15 @@
                 return data+'원';
             };
           }
+          let myWords = ["양", "량","회수","횟수"];
 
+
+          if (myWords.some(i => data[idx].title.includes(i))===true) {
+            
+            data[idx]["render"] = function (data, type, row) {
+                return Math.floor(data);
+            };
+          }
 
         }
 
