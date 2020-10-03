@@ -175,21 +175,15 @@
           $("#select-column").find('option').remove();
           worksheetColumns.forEach((_fieldName,_index) => {
             ///select box에 컬럼 넣기
-              $("#select-column").append('<option value="'+worksheetColumns._fieldName+'">'+worksheetColumns._fieldName+'</option>');
+              $("#select-column").append('<option value="'+worksheetColumns._fieldName._fieldName+'">'+worksheetColumns._fieldName._fieldName+'</option>');
           });
 
           $("#submitCol").click(function(){
           var myColumn = $("#select-column").val();
           console.log(myColumn);
           
-          // console.log(columns);
-          // console.log(myColumn);
           worksheetColumns = worksheetColumns.filter(_fieldName=>
-            myColumn.includes(worksheetColumns._fieldName));
-
-          
-          // console.log($("#select-column").val());
-          // $("#test1").text(columns);    
+            myColumn.includes(worksheetColumns._fieldName._fieldName));
           })
 ///////////////////////////////////////////////////////////////////////////
 
