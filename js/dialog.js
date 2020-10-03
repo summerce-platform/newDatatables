@@ -163,16 +163,27 @@
         var worksheetColumns = sumdata.columns;
           console.log(worksheetColumns);
 
-          ///
+          ///////////
+
+
+
+
           var targetArea2 = $("#select-column");
           // 이미 옵션이 존재할 경우 삭제
           targetArea2.empty();
 
           $("#select-column").find('option').remove();
-          worksheetColumns.forEach((_fieldName,_index) => {
-            ///select box에 컬럼 넣기
-              $("#select-column").append('<option value="'+worksheetColumns._fieldName+'">'+worksheetColumns._fieldName+'</option>');
-          });
+          
+          for (var idx =0 ; idx< data.length; idx++) {
+            // if (data[idx].title.includes('img')===true) {
+              console.log(data[idx]);
+              $("#select-column").append('<option value="'+data[idx].title+'">'+data[idx].title+'</option>')
+            
+    }
+          // worksheetColumns.forEach((_fieldName,_index) => {
+          //   ///select box에 컬럼 넣기
+          //     $("#select-column").append('<option value="'+worksheetColumns._fieldName+'">'+worksheetColumns._fieldName+'</option>');
+          // });
 
           $("#submitCol").click(function(){
           var myColumn = $("#select-column").val();
@@ -180,14 +191,14 @@
           
           // console.log(columns);
           // console.log(myColumn);
-          worksheetColumns = worksheetColumns.filter(_fieldName=>
-            myColumn.includes(worksheetColumns._fieldName));
+          worksheetColumns = worksheetColumns.filter(data=>
+            myColumn.includes(data.title));
 
           
           // console.log($("#select-column").val());
           // $("#test1").text(columns);    
           })
-
+///////////////////////////////////////////////////////////////////////////
 
 
         // This blanks out the column list
