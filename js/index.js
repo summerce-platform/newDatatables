@@ -225,7 +225,7 @@
       
           return _start + _src + _class + _style;
         };
-
+        console.log(data);
         for (var idx =0 ; idx< data.length; idx++) {
           console.log(data[idx]);
           if (data[idx].title.includes('img')===true) {
