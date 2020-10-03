@@ -173,17 +173,10 @@
           targetArea2.empty();
 
           $("#select-column").find('option').remove();
-          
-          for (var idx =0 ; idx< data.length; idx++) {
-            // if (data[idx].title.includes('img')===true) {
-              console.log(data[idx]);
-              $("#select-column").append('<option value="'+data[idx].title+'">'+data[idx].title+'</option>')
-            
-    }
-          // worksheetColumns.forEach((_fieldName,_index) => {
-          //   ///select box에 컬럼 넣기
-          //     $("#select-column").append('<option value="'+worksheetColumns._fieldName+'">'+worksheetColumns._fieldName+'</option>');
-          // });
+          worksheetColumns.forEach((_fieldName,_index) => {
+            ///select box에 컬럼 넣기
+              $("#select-column").append('<option value="'+worksheetColumns._fieldName+'">'+worksheetColumns._fieldName+'</option>');
+          });
 
           $("#submitCol").click(function(){
           var myColumn = $("#select-column").val();
@@ -191,8 +184,8 @@
           
           // console.log(columns);
           // console.log(myColumn);
-          worksheetColumns = worksheetColumns.filter(data=>
-            myColumn.includes(data.title));
+          worksheetColumns = worksheetColumns.filter(_fieldName=>
+            myColumn.includes(worksheetColumns._fieldName));
 
           
           // console.log($("#select-column").val());
