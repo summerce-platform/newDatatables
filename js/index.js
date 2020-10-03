@@ -233,12 +233,24 @@
               if (type === "display") {
                 return imageTag({
                   src: data,
-                  tagStyle: "height : 60px;",
+                  tagStyle: "height : 57px;",
                 });
               } else return data;
             };
           }
-  }
+
+          if (data[idx].title.includes('price')===true) {
+            
+            data[idx]["render"] = function (data, type, row) {
+                return data+'원';
+            };
+          }
+
+
+        }
+
+
+
         
 
         // Destroy the old table.
