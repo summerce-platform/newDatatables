@@ -289,7 +289,12 @@
             rowGroup: true,
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
-            oLanguage: datatableLangObj
+            oLanguage: datatableLangObj,
+            columnDefs: [
+              {
+                  className: 'dt-center'
+              }
+            ]
           });
         } else {
           tableReference = $('#datatable').DataTable({
