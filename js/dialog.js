@@ -168,11 +168,10 @@
           // 이미 옵션이 존재할 경우 삭제
           targetArea2.empty();
 
-
-          var counter2=1;
-          worksheetColumns.forEach(function () {
-            $("#select-column").append('<option value="'+worksheetColumns._fieldName+'">'+worksheetColumns._fieldName+'</option>');
-            counter2++;
+          $("#select-column").find('option').remove();
+          worksheetColumns.forEach((_fieldName,_index) => {
+            ///select box에 컬럼 넣기
+              $("#select-column").append('<option value="'+worksheetColumns._fieldName+'">'+worksheetColumns._fieldName+'</option>');
           });
 
           $("#submitCol").click(function(){
@@ -181,10 +180,10 @@
           
           // console.log(columns);
           // console.log(myColumn);
-          worksheetColumns = worksheetColumns.filter(column=>
-            myColumn.includes(column.fieldName));
+          worksheetColumns = worksheetColumns.filter(_fieldName=>
+            myColumn.includes(worksheetColumns._fieldName));
 
-          console.log("필터링후: "+columns);
+          
           // console.log($("#select-column").val());
           // $("#test1").text(columns);    
           })
