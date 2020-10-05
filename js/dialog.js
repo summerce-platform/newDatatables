@@ -189,6 +189,10 @@
           })
 ///////////////////////////////////////////////////////////////////////////
 
+        function deleteInput(index) {
+          // sort-it ol 안에 있는 index 번째 애를 날린다.
+          $("#li- " + index).remove();
+        }
 
         // This blanks out the column list
         $("#sort-it ol").text("");
@@ -209,11 +213,6 @@
         $("body").removeClass("dragging");
       }
     });
-  }
-
-  function deleteInput(index) {
-    // sort-it ol 안에 있는 index 번째 애를 날린다.
-    $("#li- " + index).remove();
   }
 
   // This function closes the dialog box without.
