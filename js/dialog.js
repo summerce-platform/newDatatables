@@ -189,18 +189,17 @@
           })
 ///////////////////////////////////////////////////////////////////////////
 
-        function deleteInput(index) {
-          // sort-it ol 안에 있는 index 번째 애를 날린다.
-          $("#li- " + index).remove();
-        }
-
+        
         // This blanks out the column list
         $("#sort-it ol").text("");
         var counter = 1;
         worksheetColumns.forEach(function (current_value) {
           // For each column we add a list item with an input box and label.
           // Note that this is based on materialisecss.
-          $("#sort-it ol").append("<li id='li-" + counter + "'><button onclick='deleteInput(" + counter + ");'>X</button><div class='input-field'><input id='" + current_value.fieldName + "' type='text' col_num=" + counter + "><label for=" + current_value.fieldName + "'>" + current_value.fieldName + "</label></div></li>");
+          $("#sort-it ol").append("<li id='li-" + counter + "'><button id='delBtn-"+ counter +"' onclick='deleteInput(" + counter + ");'>X</button><div class='input-field'><input id='" + current_value.fieldName + "' type='text' col_num=" + counter + "><label for=" + current_value.fieldName + "'>" + current_value.fieldName + "</label></div></li>");
+          $("#delBtn-" + counter).on("click", function() {
+            $("#li- " + counter).remove();
+          });
           counter++;
         });
       });
