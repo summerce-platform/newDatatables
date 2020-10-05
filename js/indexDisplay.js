@@ -316,6 +316,7 @@
           });
         } else {
           tableReference = $('#datatable').DataTable({
+            dom : 'rt',
             data: tableData,
             columns: data,
             responsive: true,
