@@ -201,7 +201,7 @@
           //   $("#li- " + counter).remove();
           // });
           
-          ("#sort-it ol").append("<li id='li-" + counter + "'><button onclick='document.getElementById(\"li-" + counter + "\").parentNode.removeChild(document.getElementById(\"li-" + counter + "\"));'>X</button><div class='input-field'><input id='" + current_value.fieldName + "' type='text' col_num=" + counter + "><label for=" + current_value.fieldName + "'>" + current_value.fieldName + "</label></div></li>");
+          $("#sort-it ol").append("<li id='li-" + counter + "'><button onclick='document.getElementById(\"li-" + counter + "\").parentNode.removeChild(document.getElementById(\"li-" + counter + "\"));'>X</button><div class='input-field'><input id='" + current_value.fieldName + "' type='text' col_num=" + counter + "><label for=" + current_value.fieldName + "'>" + current_value.fieldName + "</label></div></li>");
           counter++;
         });
       });
