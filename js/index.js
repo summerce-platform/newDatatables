@@ -342,12 +342,7 @@
   }
 
   function datatableInitCallback(settings, json) {
-    var stateSaveParams = function (settings, data) {
-      data.columns.forEach (function (column) {
-      delete column.visible;
-      });
-      }
-      stateSaveParams();
+
     // insert table caption
     var table = settings.oInstance.api();
     var $node = $(table.table().node());
