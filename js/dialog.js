@@ -161,34 +161,6 @@
       // Note that for our purposes and to speed things up we only want 1 record.
       worksheet.getSummaryDataAsync({ maxRows: 1 }).then(function (sumdata) {
         var worksheetColumns = sumdata.columns;
-          console.log(worksheetColumns);
-
-          ///////////
-
-
-
-
-          var targetArea2 = $("#select-column");
-          // 이미 옵션이 존재할 경우 삭제
-          targetArea2.empty();
-
-          $("#select-column").find('option').remove();
-          var ncounter = 1;
-          worksheetColumns.forEach((current_value) => {
-            ///select box에 컬럼 넣기
-              $("#select-column").append('<option value="'+current_value.fieldName+'">'+current_value.fieldName+'</option>');
-              ncounter++;
-          });
-
-          $("#submitCol").click(function(){
-          var myColumn = $("#select-column").val();
-          console.log(myColumn);
-          
-          // worksheetColumns = worksheetColumns.filter(_fieldName=>
-          //   myColumn.includes(worksheetColumns._fieldName._fieldName));
-          })
-///////////////////////////////////////////////////////////////////////////
-
         
         // This blanks out the column list
         $("#sort-it ol").text("");
