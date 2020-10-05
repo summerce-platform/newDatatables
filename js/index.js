@@ -302,6 +302,11 @@
             dom: '<"float-right"B>rt<"float-left"p><"float-right"f>',
             data: tableData,
             stateSave : true,
+            'stateSaveParams': function (settings, data) {
+              data.columns.forEach (function (column) {
+              delete column.visible;
+              });
+              },
             columns: data,
             responsive: true,
             buttons: buttons,
