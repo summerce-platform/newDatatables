@@ -303,10 +303,13 @@
             data: tableData,
             stateSave : true,
             stateSaveCallback: function(settings,data) {
-              sessionStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) )
+              var mySettings = sessionStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
+              document.cookie= mySettings;
             },
           stateLoadCallback: function(settings) {
-            return JSON.parse( sessionStorage.getItem( 'DataTables_' + settings.sInstance ) )
+            // return JSON.parse( sessionStorage.getItem( 'DataTables_' + settings.sInstance ) )
+            return JSON.parse( mySettings);
+
             },
             // 'stateSaveParams': function (settings, data) {
             //   data.columns.forEach (function (column) {
