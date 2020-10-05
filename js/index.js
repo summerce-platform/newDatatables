@@ -273,6 +273,7 @@
 
         // Read the Settings and create an array for the Buttons.
         var buttons = [];
+        buttons.push('colvis');
         var clipboard = tableau.extensions.settings.get("export-clipboard");
         if (clipboard == "Y") {
           buttons.push('copy');
@@ -300,6 +301,7 @@
           tableReference = $('#datatable').DataTable({
             dom: '<"float-right"B>rt<"float-left"p><"float-right"f>',
             data: tableData,
+            stateSave : true,
             columns: data,
             responsive: true,
             buttons: buttons,
