@@ -234,7 +234,7 @@
         console.log(data);
         for (var idx =0 ; idx< data.length; idx++) {
           console.log(data[idx]);
-          if (data[idx].title.includes('img')===true) {
+          if (data[idx].title.includes('이미지')===true) {
           
             data[idx]["render"] = function (data, type, row) {
               if (type === "display") {
@@ -273,7 +273,6 @@
 
         // Read the Settings and create an array for the Buttons.
         var buttons = [];
-        buttons.push('colvis');
         var clipboard = tableau.extensions.settings.get("export-clipboard");
         if (clipboard == "Y") {
           buttons.push('copy');
