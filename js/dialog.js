@@ -196,7 +196,7 @@
         worksheetColumns.forEach(function (current_value) {
           // For each column we add a list item with an input box and label.
           // Note that this is based on materialisecss.
-          $("#sort-it ol").append("<li id='li-" + counter + "'><button id='delBtn-"+ counter +"' onclick='deleteInput(" + counter + ");'>X</button><div class='input-field'><input id='" + current_value.fieldName + "' type='text' col_num=" + counter + "><label for=" + current_value.fieldName + "'>" + current_value.fieldName + "</label></div></li>");
+          $("#sort-it ol").append("<li id='li-" + counter + "'><button id='delBtn-"+ counter +"'>X</button><div class='input-field'><input id='" + current_value.fieldName + "' type='text' col_num=" + counter + "><label for=" + current_value.fieldName + "'>" + current_value.fieldName + "</label></div></li>");
           $("#delBtn-" + counter).on("click", function() {
             $("#li- " + counter).remove();
           });
