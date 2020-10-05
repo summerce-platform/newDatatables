@@ -214,7 +214,8 @@
         console.log(worksheetData);
         var column_order = tableau.extensions.settings.get("column_order").split("|");
         console.log(column_order);
-        var tableData = makeArray(sumdata.columns.length,sumdata.totalRowCount);
+        // var tableData = makeArray(sumdata.columns.length,sumdata.totalRowCount);
+        var tableData = makeArray(column_order.length,sumdata.totalRowCount);
         console.log(tableData);
         for (var i = 0; i < tableData.length; i++) {
           for (var j = 0; j < tableData[i].length; j++) {
