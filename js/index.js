@@ -307,6 +307,14 @@
               delete column.visible;
               });
               },
+              'stateSaveCallback': function (settings, data) {
+                // 저장하기 전에 여기에서 변경합니다.
+                window.localStorage [ 'https://summerce-platform.github.io/newDatatables/index.html'] = data;
+                },
+                'stateLoadCallback': function (settings) {
+                //로드하기 전에 여기에서 변경
+                return window.localStorage [ 'https://summerce-platform.github.io/newDatatables/index.html'];
+                },
             columns: data,
             responsive: true,
             buttons: buttons,
