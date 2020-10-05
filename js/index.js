@@ -211,8 +211,11 @@
         // looped through to populate our array with the value data set. We also added
         // logic to read from the column names and column order from our configiration.
         const worksheetData = sumdata.data;
+        console.log(worksheetData);
         var column_order = tableau.extensions.settings.get("column_order").split("|");
+        console.log(column_order);
         var tableData = makeArray(sumdata.columns.length,sumdata.totalRowCount);
+        console.log(tableData);
         for (var i = 0; i < tableData.length; i++) {
           for (var j = 0; j < tableData[i].length; j++) {
             tableData[i][j] = worksheetData[i][column_order[j]-1].formattedValue;
