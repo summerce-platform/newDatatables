@@ -302,15 +302,15 @@
             dom: '<"float-right"B>rt<"float-left"p><"float-right"f>',
             data: tableData,
             stateSave : true,
-            'stateSaveParams': function (settings, data) {
-              data.columns.forEach (function (column) {
-              delete column.visible;
-              });
-              },
-              'stateSaveCallback': function (settings, data) {
-                // 저장하기 전에 여기에서 변경합니다.
-                window.localStorage [ 'https://summerce-platform.github.io/newDatatables/index.html'] = data;
-                },
+            // 'stateSaveParams': function (settings, data) {
+            //   data.columns.forEach (function (column) {
+            //   delete column.visible;
+            //   });
+            //   },
+            //   'stateSaveCallback': function (settings, data) {
+            //     // 저장하기 전에 여기에서 변경합니다.
+            //     window.localStorage [ 'https://summerce-platform.github.io/newDatatables/index.html'] = data;
+            //     },
 
             columns: data,
             responsive: true,
@@ -342,6 +342,12 @@
   }
 
   function datatableInitCallback(settings, json) {
+    var stateSaveParams = function (settings, data) {
+      data.columns.forEach (function (column) {
+      delete column.visible;
+      });
+      }
+      stateSaveParams();
     // insert table caption
     var table = settings.oInstance.api();
     var $node = $(table.table().node());
