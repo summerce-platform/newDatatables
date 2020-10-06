@@ -356,7 +356,7 @@
     var table = settings.oInstance.api();
     var $node = $(table.table().node());
     var  stateLoadCallback = function(settings) {
-      return JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) )
+      return JSON.parse( localStorage.getItem( 'DataTables_' + settings.oInstance ) )
       };
       stateLoadCallback();
     var sheetName = tableau.extensions.settings.get('worksheet');
@@ -427,7 +427,7 @@
     var countOfColumnsForRowHeader = Number(tableau.extensions.settings.get('col-count-row-header'));
 
    var mySettings = function(settings,data) {
-      localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
+      localStorage.setItem( 'DataTables_' + settings.oInstance, JSON.stringify(data) );
      
     };
     mySettings();
