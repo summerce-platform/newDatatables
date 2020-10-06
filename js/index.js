@@ -258,7 +258,7 @@
             console.log(data);
             data[idx]["render"] = function (data, type, row) {
               if (type === "display") {
-                data = '<a href="' + row[0]+ '">' + data + '</a>';
+                data = '<a target="_blank" href="' + row[0]+ '">' + data + '</a>';
                 return data;
               } else return data;
             };
