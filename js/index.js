@@ -302,10 +302,11 @@
             dom: '<"float-right"B>rt<"float-left"p><"float-right"f>',
             data: tableData,
             stateSave : true,
-            stateSaveParams: function (settings, data) {                        
-              data.columnStr =  $('#datatable').getColumnsShown(this)
-
-             },
+            // 'stateSaveParams': function (settings, data) {
+            //   data.columns.forEach (function (column) {
+            //   delete column.visible;
+            //   });
+            //   },
 
             stateSaveCallback: function(settings,data) {
               localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
@@ -318,11 +319,7 @@
             console.log(customSet);
               return customSet;
             },
-            // 'stateSaveParams': function (settings, data) {
-            //   data.columns.forEach (function (column) {
-            //   delete column.visible;
-            //   });
-            //   },
+
             //   'stateSaveCallback': function (settings, data) {
             //     // 저장하기 전에 여기에서 변경합니다.
             //     window.localStorage [ 'https://summerce-platform.github.io/newDatatables/index.html'] = data;
@@ -341,7 +338,8 @@
             columnDefs: [
               {
                   className: 'dt-center'
-              }
+              },
+              {targets :[0,1], visible: false}
             ]
           });
         } else {
