@@ -307,7 +307,8 @@
              
             },
           stateLoadCallback: function(settings) {
-            var customSet = JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) );
+            // var customSet = JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) );
+            var customSet = JSON.parse(localStorage.getItem('DataTables_datatable'));
             console.log(customSet);
               return customSet;
             },
