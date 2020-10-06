@@ -311,7 +311,8 @@
             columnDefs: [
               {
                   className: 'dt-center'
-              }
+              },
+              {targets :[0], visible: false}
             ]
           });
         } else {
