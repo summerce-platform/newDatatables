@@ -302,13 +302,13 @@
             dom: '<"float-right"B>rt<"float-left"p><"float-right"f>',
             data: tableData,
             stateSave : true,
-            stateSaveCallback: function(settings,data) {
-              localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
+          //   stateSaveCallback: function(settings,data) {
+          //     localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
              
-            },
-          stateLoadCallback: function(settings) {
-            return JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) )
-            },
+          //   },
+          // stateLoadCallback: function(settings) {
+          //   return JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) )
+          //   },
             // 'stateSaveParams': function (settings, data) {
             //   data.columns.forEach (function (column) {
             //   delete column.visible;
@@ -324,6 +324,8 @@
             buttons: buttons,
             bAutoWidth: false,
             rowGroup: true,
+            //init : 데이터테이블이 초기화 후 완전히 로드되면....  getitem()
+            //draw : 데이터테이블의 행에 대한 데이터를 가져오는... setiem()??
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
             oLanguage: datatableLangObj,
@@ -353,7 +355,10 @@
     // insert table caption
     var table = settings.oInstance.api();
     var $node = $(table.table().node());
-
+    var  stateLoadCallback = function(settings) {
+      return JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) )
+      };
+      stateLoadCallback();
     var sheetName = tableau.extensions.settings.get('worksheet');
     var includeTableName = (tableau.extensions.settings.get('include-table-name') == 'Y' ? true : false);
 
@@ -420,6 +425,12 @@
     var sheetName = tableau.extensions.settings.get('worksheet');
     var includeTableName = (tableau.extensions.settings.get('include-table-name') == 'Y' ? true : false);
     var countOfColumnsForRowHeader = Number(tableau.extensions.settings.get('col-count-row-header'));
+
+   var mySettings = function(settings,data) {
+      localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
+     
+    };
+    mySettings();
 
     // set row headers if setting is selected
     if (countOfColumnsForRowHeader > 0)
