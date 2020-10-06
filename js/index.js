@@ -259,7 +259,7 @@
             var goodsUrl = data[0].title;
             data[idx]["render"] = function (data, type, row) {
               if (type === "display") {
-                data = '<a href="' + row.goodsUrl + '">' + data + '</a>';
+                data = '<a href="' + row[goodsUrl] + '">' + data + '</a>';
               } else return data;
             };
           }
