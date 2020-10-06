@@ -231,14 +231,14 @@
       
           return _start + _src + _class + _style;
         };
-        var urlTag = (obj) => {
-          const _start = "<a ";
-          const _src = "href='" + obj.src + "' ";
-          const _class = obj.tagClass !== null ? "class='" + obj.tagClass + "' " : "";
+        // var urlTag = (obj) => {
+        //   const _start = "<a ";
+        //   const _src = "href='" + obj.src + "' ";
+        //   const _class = obj.tagClass !== null ? "class='" + obj.tagClass + "' " : "";
           
       
-          return _start + _src + _class;
-        };
+        //   return _start + _src + _class;
+        // };
         console.log(data);
         for (var idx =0 ; idx< data.length; idx++) {
           console.log(data[idx]);
@@ -253,16 +253,16 @@
               } else return data;
             };
           }
-          if (data[idx].title.includes('상품명')===true) {
-            var goodUrl = data[idx].title.includes('Goods Url');
-            console.log(goodUrl);
-            console.log(data.indexOf(data[idx].title.includes('Goods Url')));
-            // data[idx]["render"] = function (data, type, row) {
-            //   if (type === "display") {
-            //     data = '<a href="' + data + '">' + data + '</a>';
-            //   } else return data;
-            // };
-          }
+          // if (data[idx].title.includes('Goods Url')===true) {
+          //   var goodUrl = data[idx].title.includes('Goods Url');
+          //   console.log(goodUrl);
+          //   console.log(data.indexOf(data[idx].title.includes('Goods Url')));
+          //   // data[idx]["render"] = function (data, type, row) {
+          //   //   if (type === "display") {
+          //   //     data = '<a href="' + data + '">' + data + '</a>';
+          //   //   } else return data;
+          //   // };
+          // }
 
           if (data[idx].title.includes('price')===true) {
             
@@ -356,8 +356,9 @@
             columnDefs: [
               {
                   className: 'dt-center'
-              },
-              {targets :[0], visible: false}
+              }
+              // ,
+              // {targets :[0], visible: false}
             ]
           });
         } else {
