@@ -253,17 +253,18 @@
               } else return data;
             };
           }
-          if (data[idx].title.includes('상품명')===true) {
+          else if (data[idx].title.includes('상품명')===true) {
             
             console.log(data);
             data[idx]["render"] = function (data, type, row) {
               if (type === "display") {
                 data = '<a href="' + row[0]+ '">' + data + '</a>';
+                return data;
               } else return data;
             };
           }
 
-          if (data[idx].title.includes('price')===true) {
+          else if (data[idx].title.includes('price')===true) {
             
             data[idx]["render"] = function (data, type, row) {
                 return data+'원';
@@ -325,17 +326,17 @@
             //   });
             //   },
 
-            stateSaveCallback: function(settings,data) {
-              localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
+          //   stateSaveCallback: function(settings,data) {
+          //     localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
              
-            },
-          stateLoadCallback: function(settings) {
-            // var customSet = JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) );
-            // var customSet = JSON.parse(localStorage.getItem('DataTables_datatable'));
-            var customSet = localStorage.getItem('DataTables_datatable');
-            console.log(customSet);
-              return customSet;
-            },
+          //   },
+          // stateLoadCallback: function(settings) {
+          //   // var customSet = JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) );
+          //   // var customSet = JSON.parse(localStorage.getItem('DataTables_datatable'));
+          //   var customSet = localStorage.getItem('DataTables_datatable');
+          //   console.log(customSet);
+          //     return customSet;
+          //   },
 
             //   'stateSaveCallback': function (settings, data) {
             //     // 저장하기 전에 여기에서 변경합니다.
