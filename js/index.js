@@ -306,7 +306,7 @@
               data.columnStr =  $('#datatable').getColumnsShown(this)
 
              },
-             "stateLoadCallback": function (settings) {
+             stateLoadCallback: function (settings) {
               var o;                         
               // Send an Ajax request to the server to get the data. Note that
              // this is a synchronous request since the data is expected back from the
