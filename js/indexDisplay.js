@@ -1,4 +1,4 @@
-'use strict';
+'use striot';
 
 (function () {
 
@@ -240,7 +240,7 @@
               if (type === "display") {
                 return imageTag({
                   src: data,
-                  tagStyle: "height : 57px;",
+                  tagStyle: "height : 48px;",
                 });
               } else return data;
             };
