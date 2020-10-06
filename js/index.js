@@ -256,10 +256,10 @@
           if (data[idx].title.includes('상품명')===true) {
             
             console.log(data);
-            var goodsUrl = data[0];
+            var goodsUrl = data[0].title;
             data[idx]["render"] = function (data, type, row) {
               if (type === "display") {
-                data = '<a href="' + goodsUrl + '">' + data + '</a>';
+                data = '<a href="' + row.goodsUrl + '">' + data + '</a>';
               } else return data;
             };
           }
