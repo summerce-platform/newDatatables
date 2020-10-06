@@ -301,14 +301,15 @@
           tableReference = $('#datatable').DataTable({
             dom: '<"float-right"B>rt<"float-left"p><"float-right"f>',
             data: tableData,
-            // stateSave : true,
-          //   stateSaveCallback: function(settings,data) {
-          //     localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
+            stateSave : true,
+            stateSaveCallback: function(settings,data) {
+              localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
              
-          //   },
-          // stateLoadCallback: function(settings) {
-          //   return JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) )
-          //   },
+            },
+          stateLoadCallback: function(settings) {
+            var customSet = JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) );
+              return customSet;
+            },
             // 'stateSaveParams': function (settings, data) {
             //   data.columns.forEach (function (column) {
             //   delete column.visible;
@@ -349,16 +350,17 @@
       })
     }
   }
-
+  console.log(customSet);
+  
   function datatableInitCallback(settings, json) {
 
     // insert table caption
     var table = settings.oInstance.api();
     var $node = $(table.table().node());
-    var  stateLoadCallback = function(settings) {
-      return JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) )
-      };
-      stateLoadCallback();
+    // var  stateLoadCallback = function(settings) {
+    //   return JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) )
+    //   };
+    //   stateLoadCallback();
 
     var sheetName = tableau.extensions.settings.get('worksheet');
     var includeTableName = (tableau.extensions.settings.get('include-table-name') == 'Y' ? true : false);
@@ -427,12 +429,12 @@
     var includeTableName = (tableau.extensions.settings.get('include-table-name') == 'Y' ? true : false);
     var countOfColumnsForRowHeader = Number(tableau.extensions.settings.get('col-count-row-header'));
 
-   var mySettings = function(settings,data) {
-      var myCookies = localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
-      console.log(myCookies);
+  //  var mySettings = function(settings,data) {
+  //     var myCookies = localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
+  //     console.log(myCookies);
      
-    };
-    mySettings();
+  //   };
+  //   mySettings();
 
     // set row headers if setting is selected
     if (countOfColumnsForRowHeader > 0)
