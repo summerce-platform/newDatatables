@@ -26,6 +26,9 @@ table.dataTable {
    * Body styles
    */
 }
+table.dataTable, table.dataTable th, table.dataTable td{
+  font-size: 0.9em;
+}
 table.dataTable thead th,
 table.dataTable tfoot th {
   font-weight: bold;
@@ -466,7 +469,7 @@ div.dt-button-info {
   margin-top: -100px;
   margin-left: -200px;
   background-color: white;
-  border: 2px solid #111;
+  border: 2px solid #ddd;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
   text-align: center;
