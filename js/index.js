@@ -306,35 +306,18 @@
               data.columnStr =  $('#datatable').getColumnsShown(this)
 
              },
-             stateLoadCallback: function (settings) {
-              var o;                         
-              // Send an Ajax request to the server to get the data. Note that
-             // this is a synchronous request since the data is expected back from the
-              // function
-              //Setting async to false means that the statement you are calling has to complete before the next statement in your function can be called.
-              $.ajax( {
-                "url": "https://summerce-platform.github.io/newDatatables/index.html",
-                "async": false,
-                "dataType": "json",
-                "success": function (json) {
-                  o = json;
-                }
 
-
-              } );
-
-              return o;
-            },
-          //   stateSaveCallback: function(settings,data) {
-          //     localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
+            stateSaveCallback: function(settings,data) {
+              localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
              
-          //   },
-          // stateLoadCallback: function(settings) {
-          //   // var customSet = JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) );
-          //   var customSet = JSON.parse(localStorage.getItem('DataTables_datatable'));
-          //   console.log(customSet);
-          //     return customSet;
-          //   },
+            },
+          stateLoadCallback: function(settings) {
+            // var customSet = JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) );
+            // var customSet = JSON.parse(localStorage.getItem('DataTables_datatable'));
+            var customSet = localStorage.getItem('DataTables_datatable');
+            console.log(customSet);
+              return customSet;
+            },
             // 'stateSaveParams': function (settings, data) {
             //   data.columns.forEach (function (column) {
             //   delete column.visible;
