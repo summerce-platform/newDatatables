@@ -253,7 +253,7 @@
               } else return data;
             };
           }
-          if (data[idx].title.includes('이미지')===true) {
+          if (data[idx].title.includes('상품명')===true) {
             
             console.log(data);
             var goodsUrl = data[0];
