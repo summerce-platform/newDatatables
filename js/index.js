@@ -231,7 +231,6 @@
       
           return _start + _src + _class + _style;
         };
-        <a href=""></a>
         var urlTag = (obj) => {
           const _start = "<a ";
           const _src = "href='" + obj.src + "' ";
@@ -257,6 +256,7 @@
           if (data[idx].title.includes('상품명')===true) {
             var goodUrl = data[idx].title.includes('Goods Url');
             console.log(goodUrl);
+            console.log(data.indexOf(data[idx].title.includes('Goods Url')));
             // data[idx]["render"] = function (data, type, row) {
             //   if (type === "display") {
             //     data = '<a href="' + data + '">' + data + '</a>';
