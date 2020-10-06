@@ -26,9 +26,7 @@ table.dataTable {
    * Body styles
    */
 }
-table.dataTable, table.dataTable th, table.dataTable td{
-  font-size: 0.9em;
-}
+
 table.dataTable thead th,
 table.dataTable tfoot th {
   font-weight: bold;
@@ -279,6 +277,7 @@ table.dataTable th,
 table.dataTable td {
   box-sizing: content-box;
   text-align: center;
+  font-size: 0.9em;
 }
 
 /*
