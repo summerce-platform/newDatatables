@@ -324,7 +324,11 @@
             bAutoWidth: false,
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
-            oLanguage: datatableLangObj
+            oLanguage: datatableLangObj,
+            columnDefs : [
+              {targets :[0], visible: false} 
+              
+            ]
           });
         }
       })
