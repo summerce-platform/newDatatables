@@ -356,9 +356,10 @@
     var table = settings.oInstance.api();
     var $node = $(table.table().node());
     var  stateLoadCallback = function(settings) {
-      return JSON.parse( localStorage.getItem( 'DataTables_' + settings.oInstance ) )
+      return JSON.parse( localStorage.getItem( 'DataTables_' + settings.sInstance ) )
       };
       stateLoadCallback();
+
     var sheetName = tableau.extensions.settings.get('worksheet');
     var includeTableName = (tableau.extensions.settings.get('include-table-name') == 'Y' ? true : false);
 
@@ -427,7 +428,8 @@
     var countOfColumnsForRowHeader = Number(tableau.extensions.settings.get('col-count-row-header'));
 
    var mySettings = function(settings,data) {
-      localStorage.setItem( 'DataTables_' + settings.oInstance, JSON.stringify(data) );
+      var myCookies = localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
+      console.log(myCookies);
      
     };
     mySettings();
