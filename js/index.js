@@ -301,7 +301,7 @@
           tableReference = $('#datatable').DataTable({
             dom: '<"float-right"B>rt<"float-left"p><"float-right"f>',
             data: tableData,
-            stateSave : true,
+            // stateSave : true,
           //   stateSaveCallback: function(settings,data) {
           //     localStorage.setItem( 'DataTables_' + settings.sInstance, JSON.stringify(data) );
              
