@@ -256,12 +256,12 @@
           if (data[idx].title.includes('이미지')===true) {
             
             console.log(data);
-            console.log(data.indexOf(data[idx].title.includes('Goods Url')));
-            data[idx]["render"] = function (data, type, row) {
-              if (type === "display") {
-                data = '<a href="' + data[0] + '">' + data + '</a>';
-              } else return data;
-            };
+            console.log(data[0]);
+            // data[idx]["render"] = function (data, type, row) {
+            //   if (type === "display") {
+            //     data = '<a href="' + data[0] + '">' + data + '</a>';
+            //   } else return data;
+            // };
           }
 
           if (data[idx].title.includes('price')===true) {
