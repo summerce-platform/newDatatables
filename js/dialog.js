@@ -112,7 +112,7 @@
           var selectItem = $(item).val();
           $("#selectCol").html(selectItem);
         }
-      })
+      });
       // $("#sort-it ol").selectable({
       //   stop : function(item){
       //     var result = $( "#test1" ).empty();
@@ -192,6 +192,12 @@
       onDrop: function (item) {
         $(item).removeClass("dragged").removeAttr("style");
         $("body").removeClass("dragging");
+      }
+    });
+    $('#sort-it ol').selectable({
+      onSelect : function(item){
+        var selectItem = $(item).val();
+        $("#selectCol").html(selectItem);
       }
     });
   }
