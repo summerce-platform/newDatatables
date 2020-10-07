@@ -318,7 +318,6 @@
 
         // Read the Settings and create an array for the Buttons.
         var buttons = [];
-        buttons.push('colvis');
         var clipboard = tableau.extensions.settings.get("export-clipboard");
         if (clipboard == "Y") {
           buttons.push('copy');
