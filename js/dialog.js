@@ -82,8 +82,6 @@
       $("#selectWorksheet").append("<option value='" + worksheet.name + "'>" + worksheet.name + "</option>");
     });
 
-
-
     // Add the column orders it exists
     var column_order = tableau.extensions.settings.get("column_order");
     if (column_order != undefined && column_order.length > 0) {
@@ -105,12 +103,6 @@
         onDrop: function (item) {
           $(item).removeClass("dragged").removeAttr("style");
           $("body").removeClass("dragging");
-        }
-      });
-      $('#sort-it ol').selectable({
-        onSelect : function(item){
-          var selectItem = $(item).val();
-          $("#selectCol").html(selectItem);
         }
       });
       // $("#sort-it ol").selectable({
@@ -169,7 +161,7 @@
       // Note that for our purposes and to speed things up we only want 1 record.
       worksheet.getSummaryDataAsync({ maxRows: 1 }).then(function (sumdata) {
         var worksheetColumns = sumdata.columns;
-
+        
         // This blanks out the column list
         $("#sort-it ol").text("");
         var counter = 1;
@@ -192,12 +184,6 @@
       onDrop: function (item) {
         $(item).removeClass("dragged").removeAttr("style");
         $("body").removeClass("dragging");
-      }
-    });
-    $('#sort-it ol').selectable({
-      onSelect : function(item){
-        var selectItem = $(item).val();
-        $("#selectCol").html(selectItem);
       }
     });
   }
