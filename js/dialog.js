@@ -199,6 +199,9 @@
 
     // Data settings
     tableau.extensions.settings.set("imgHeight", $("#myImg").val());
+    tableau.extensions.settings.set("qntySuffix", $("#myQnty").val());
+    tableau.extensions.settings.set("amtSuffix", $("#myAmt").val());
+    tableau.extensions.settings.set("freqSuffix", $("#myFreq").val());
     tableau.extensions.settings.set("worksheet", $("#selectWorksheet").val());
     tableau.extensions.settings.set("max_no_records", $("#max_no_records").val());
     tableau.extensions.settings.set("underlying", $("#underlying").val());
