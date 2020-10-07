@@ -290,14 +290,20 @@
               return Math.floor(parseFloat(data))+amtSuffix;
             };
           }
-         //// 횟수관련
-          else if (data[idx].title.includes('회수')===true || data[idx].title.includes('횟수')===true || data[idx].title.includes('클릭수')===true) {
+         //// 횟수 관련
+          else if (data[idx].title.includes('회수')===true || data[idx].title.includes('횟수')===true) {
             
             data[idx]["render"] = function (data, type, row) {
               return Math.floor(parseFloat(data))+freqSuffix;
             };
           }
-
+         //// 클릭수 관련
+         else if (data[idx].title.includes(myEtc)===true ) {
+            
+          data[idx]["render"] = function (data, type, row) {
+            return Math.floor(parseFloat(data))+myEtc2;
+          };
+        }
           
         }
 
