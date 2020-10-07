@@ -199,8 +199,8 @@
 
     // Data settings
     tableau.extensions.settings.set("imgHeight", $("#myImg").val());
-    tableau.extensions.settings.set("imgHeight", $("#myEtc").val());
-    tableau.extensions.settings.set("imgHeight", $("#myEtc2").val());
+    tableau.extensions.settings.set("myEtc", $("#myEtc").val());
+    tableau.extensions.settings.set("myEtc2", $("#myEtc2").val());
     tableau.extensions.settings.set("qntySuffix", $("#myQnty").val());
     tableau.extensions.settings.set("amtSuffix", $("#myAmt").val());
     tableau.extensions.settings.set("freqSuffix", $("#myFreq").val());
