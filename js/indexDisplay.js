@@ -240,7 +240,8 @@
               if (type === "display") {
                 return imageTag({
                   src: data,
-                  tagStyle: "height : 48px;",
+                  // tagStyle: "height : 48px;",
+                  tagStyle: "height : "+imgHeight+"px;"
                 });
               } else return data;
             };
