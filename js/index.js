@@ -84,8 +84,7 @@
       oAria: {
         sSortAscending: ': activate to sort column ascending'+(includeTableName ? ' on '+sheetName+' table' : ''),
         sSortDescending: ': activate to sort column descending'+(includeTableName ? ' on '+sheetName+' table' : ''),
-        // decimal: ".",
-        // thousands: ","
+  
       }
     };
 
@@ -223,6 +222,7 @@
             tableData[i][j] = worksheetData[i][column_order[j]-1].formattedValue;
           }
         }
+        
         var imageTag = (obj) => {
           const _start = "<img ";
           const _src = "src='" + obj.src + "' ";
@@ -243,6 +243,7 @@
         console.log(data);
         for (var idx =0 ; idx< data.length; idx++) {
           console.log(data[idx]);
+          console.log(data[idx].DataType);
           if (data[idx].title.includes('이미지')===true) {
           
             data[idx]["render"] = function (data, type, row) {
@@ -272,8 +273,16 @@
                 return data+'원';
             };
           }
+          
+          else if (data[idx].title.includes('수')===true ||data[idx].title.includes('액')===true ||data[idx].title.includes('량')===true ||data[idx].title.includes('양')===true) {
+            
+            data[idx]["render"] = function (data, type, row) {
+              return parseFloat(data).toFixed(0);
+            };
+          }
 
 
+          
         }
 
 
@@ -321,6 +330,7 @@
           tableReference = $('#datatable').DataTable({
             dom: '<"float-right"B>rt<"float-left"p><"float-right"f>',
             data: tableData,
+            order :[[1,"asc"]],
             stateSave : true,
             // 'stateSaveParams': function (settings, data) {
             //   data.columns.forEach (function (column) {
@@ -355,12 +365,17 @@
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
             oLanguage: datatableLangObj,
+
             columnDefs: [
               {
                   className: 'dt-center'
               },
               {targets :[0], visible: false}
+
+              
+
             ]
+           
           });
         } else {
           tableReference = $('#datatable').DataTable({
