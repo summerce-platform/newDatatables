@@ -291,7 +291,7 @@
             };
           }
          //// 횟수관련
-          else if (data[idx].title.includes('회수')===true || data[idx].title.includes('횟수')===true) {
+          else if (data[idx].title.includes('회수')===true || data[idx].title.includes('횟수')===true || data[idx].title.includes('클릭수')===true) {
             
             data[idx]["render"] = function (data, type, row) {
               return Math.floor(parseFloat(data))+freqSuffix;
