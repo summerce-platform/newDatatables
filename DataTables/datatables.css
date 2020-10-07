@@ -375,6 +375,7 @@ table.dataTable td {
 .dataTables_wrapper .dataTables_paginate {
   color: #333;
   margin-top : 8px;
+  font-size: 0.85em;
 }
 .dataTables_wrapper .dataTables_scroll {
   clear: both;
