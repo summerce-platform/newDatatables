@@ -270,10 +270,10 @@
             };
           }
 
-          else if (data[idx].title.includes('price')===true) {
+          else if (data[idx].title.includes('Rating')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-                return data+'원';
+              return Math.floor(parseFloat(data));
             };
           }
           ////QNTY 관련
