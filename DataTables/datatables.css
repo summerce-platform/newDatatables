@@ -286,7 +286,7 @@ table.dataTable td {
 .dataTables_wrapper {
   position: relative;
   clear: both;
-  padding: 15px;
+  padding: 5px;
   *zoom: 1;
   zoom: 1;
 }
@@ -507,11 +507,11 @@ input.dt-button {
   box-sizing: border-box;
   margin-right: 0.333em;
   margin-bottom: 0.333em;
-  padding: 0.5em 1em;
+  padding: 0.5em 0.8em;
   border: none;
   border-radius: .25em;
   cursor: pointer;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: normal;
   line-height: 1.6em;
   white-space: nowrap;
