@@ -74,6 +74,7 @@
     });
 
     // Retrieve values the other two values from the settings dialogue window.
+    var imgHeight = tableau.extensions.settings.get("imgHeight");
     var underlying = tableau.extensions.settings.get("underlying");
     var max_no_records = tableau.extensions.settings.get("max_no_records");
     var includeTableName = (tableau.extensions.settings.get('include-table-name') == 'Y' ? true : false);
@@ -248,7 +249,8 @@
               if (type === "display") {
                 return imageTag({
                   src: data,
-                  tagStyle: "height : 57px;",
+                  
+                  tagStyle: "height : "+imgHeight+"px;"
                 });
               } else return data;
             };
