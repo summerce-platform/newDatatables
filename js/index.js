@@ -75,6 +75,9 @@
 
     // Retrieve values the other two values from the settings dialogue window.
     var imgHeight = tableau.extensions.settings.get("imgHeight");
+    var qntySuffix = tableau.extensions.settings.get("qntySuffix");
+    var amtSuffix = tableau.extensions.settings.get("amtSuffix");
+    var freqSuffix = tableau.extensions.settings.get("freqSuffix");
     var underlying = tableau.extensions.settings.get("underlying");
     var max_no_records = tableau.extensions.settings.get("max_no_records");
     var includeTableName = (tableau.extensions.settings.get('include-table-name') == 'Y' ? true : false);
@@ -273,14 +276,27 @@
                 return data+'원';
             };
           }
-          
-          else if (data[idx].title.includes('수')===true ||data[idx].title.includes('액')===true ||data[idx].title.includes('량')===true ||data[idx].title.includes('양')===true) {
+          ////QNTY 관련
+          else if (data[idx].title.includes('량')===true || data[idx].title.includes('양')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-              return parseFloat(data).toFixed(0);
+              return Math.floor(parseFloat(data))+qntySuffix;
             };
           }
-
+          //// AMT 관련
+          else if (data[idx].title.includes('액')===true || data[idx].title.includes('단가')===true) {
+            
+            data[idx]["render"] = function (data, type, row) {
+              return Math.floor(parseFloat(data))+amtSuffix;
+            };
+          }
+         //// 횟수관련
+          else if (data[idx].title.includes('회수')===true || data[idx].title.includes('횟수')===true) {
+            
+            data[idx]["render"] = function (data, type, row) {
+              return Math.floor(parseFloat(data))+freqSuffix;
+            };
+          }
 
           
         }
