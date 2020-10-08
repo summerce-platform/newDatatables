@@ -263,7 +263,7 @@
           }
           else if (data[idx].title.includes('상품명')===true) {
             
-            console.log(data);
+            
             data[idx]["render"] = function (data, type, row) {
               if (type === "display") {
                 data = '<a target="_blank" href="' + row[0]+ '">' + data + '</a>';
@@ -275,35 +275,36 @@
           else if (data[idx].title.includes('Rating')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-              return Math.floor(parseFloat(data));
+              return Math.floor(parseFloat(data.replaceAll(",","")));
+              
             };
           }
           ////QNTY 관련
           else if (data[idx].title.includes('량')===true || data[idx].title.includes('양')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-              return Math.floor(parseFloat(data))+qntySuffix;
+              return Math.floor(parseFloat(data.replaceAll(",","")))+qntySuffix;
             };
           }
           //// AMT 관련
           else if (data[idx].title.includes('액')===true || data[idx].title.includes('단가')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-              return Math.floor(parseFloat(data))+amtSuffix;
+              return Math.floor(parseFloat(data.replaceAll(",","")))+amtSuffix;
             };
           }
          //// 횟수 관련
           else if (data[idx].title.includes('회수')===true || data[idx].title.includes('횟수')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-              return Math.floor(parseFloat(data))+freqSuffix;
+              return Math.floor(parseFloat(data.replaceAll(",","")))+freqSuffix;
             };
           }
          //// 클릭수 관련
          else if (data[idx].title.includes(myEtc)===true ) {
             
           data[idx]["render"] = function (data, type, row) {
-            return Math.floor(parseFloat(data))+myEtc2;
+            return Math.floor(parseFloat(data.replaceAll(",","")))+myEtc2;
           };
         }
           
