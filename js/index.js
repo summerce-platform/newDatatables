@@ -275,35 +275,35 @@
           else if (data[idx].title.includes('Rating')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-              return Math.floor(data);
+              return Math.floor(parseFloat(data));
             };
           }
           ////QNTY 관련
           else if (data[idx].title.includes('량')===true || data[idx].title.includes('양')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-              return Math.floor(data)+qntySuffix;
+              return Math.floor(parseFloat(data))+qntySuffix;
             };
           }
           //// AMT 관련
           else if (data[idx].title.includes('액')===true || data[idx].title.includes('단가')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-              return Math.floor(data)+amtSuffix;
+              return Math.floor(parseFloat(data))+amtSuffix;
             };
           }
          //// 횟수 관련
           else if (data[idx].title.includes('회수')===true || data[idx].title.includes('횟수')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-              return Math.floor(data)+freqSuffix;
+              return Math.floor(parseFloat(data))+freqSuffix;
             };
           }
          //// 클릭수 관련
          else if (data[idx].title.includes(myEtc)===true ) {
             
           data[idx]["render"] = function (data, type, row) {
-            return Math.floor(data)+myEtc2;
+            return Math.floor(parseFloat(data))+myEtc2;
           };
         }
           
