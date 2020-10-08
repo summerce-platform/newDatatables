@@ -78,6 +78,8 @@
     var qntySuffix = tableau.extensions.settings.get("qntySuffix");
     var amtSuffix = tableau.extensions.settings.get("amtSuffix");
     var freqSuffix = tableau.extensions.settings.get("freqSuffix");
+    var myEtc =tableau.extensions.settings.get("myEtc");
+    var myEtc2 = tableau.extensions.settings.get("myEtc2");
     var underlying = tableau.extensions.settings.get("underlying");
     var max_no_records = tableau.extensions.settings.get("max_no_records");
     var includeTableName = (tableau.extensions.settings.get('include-table-name') == 'Y' ? true : false);
