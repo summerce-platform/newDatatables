@@ -506,17 +506,17 @@ input.dt-button {
   display: inline-block;
   box-sizing: border-box;
   margin-right: 0.333em;
-  margin-bottom: 0.333em;
-  padding: 0.5em 0.8em;
+  margin-bottom: 0.7em;
+  padding: 0.5em 2em;
   border: none;
   border-radius: .25em;
   cursor: pointer;
-  font-size: 0.8em;
+  font-size: 0.85em;
   font-weight: normal;
   line-height: 1.6em;
   white-space: nowrap;
   overflow: hidden;
-  background-color: #515da6;
+  background-color: #a8a7a7;
   
   /* Fallback */
   /* background: -webkit-linear-gradient(top, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%); */
