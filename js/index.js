@@ -283,7 +283,6 @@
           else if (data[idx].title.includes('량')===true || data[idx].title.includes('양')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-              data[idx].type='formatted=num'
               return Math.floor(parseFloat(data.replaceAll(",","")))+qntySuffix;
             };
           }
@@ -291,7 +290,6 @@
           else if (data[idx].title.includes('액')===true || data[idx].title.includes('단가')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-                            data[idx].type='formatted=num'
               return Math.floor(parseFloat(data.replaceAll(",","")))+amtSuffix;
             };
           }
@@ -299,7 +297,6 @@
           else if (data[idx].title.includes('회수')===true || data[idx].title.includes('횟수')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-                            data[idx].type='formatted=num'
               return Math.floor(parseFloat(data.replaceAll(",","")))+freqSuffix;
             };
           }
@@ -307,7 +304,6 @@
          else if (data[idx].title.includes(myEtc)===true ) {
             
           data[idx]["render"] = function (data, type, row) {
-                          data[idx].type='formatted=num'
             return Math.floor(parseFloat(data.replaceAll(",","")))+myEtc2;
           };
         }
