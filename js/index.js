@@ -185,6 +185,8 @@
             responsive: true,
             buttons: buttons,
             bAutoWidth: false,
+            bPaginate : true,
+            processing : true,
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
             oLanguage: datatableLangObj
@@ -195,6 +197,8 @@
             columns: data,
             responsive: true,
             bAutoWidth: false,
+            bPaginate : true,
+            processing : true,
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
             oLanguage: datatableLangObj
@@ -382,6 +386,8 @@
             columns: data,
             responsive: true,
             buttons: buttons,
+            bPaginate : true,
+            processing : true,
             bAutoWidth: false,
             rowGroup: true,
             //init : 데이터테이블이 초기화 후 완전히 로드되면....  getitem()
@@ -407,6 +413,8 @@
             columns: data,
             responsive: true,
             bAutoWidth: false,
+            bPaginate : true,
+            processing : true,
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
             oLanguage: datatableLangObj
