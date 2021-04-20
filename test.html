@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Datasources Sample</title>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <!-- <link rel="stylesheet" href="https://ninecube.dvision.co/css/app.css" /> -->
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <!-- Extensions Library (this will be hosted on a CDN eventually) -->
+        <!-- <script src="../../lib/tableau.extensions.1.latest.js"></script> -->
+
+        <script src="js/tableau.extensions.1.latest.min.js"></script>
+
+        <!-- Our extension's code -->
+        <!-- <script type="text/javascript" src="https://ninecube.dvision.co/js/chunk-vendors.js"></script>
+        <script type="text/javascript" src="https://ninecube.dvision.co/js/app.js"></script> -->
+        <script src="js/test.js"></script>
+    </head>
+
+    <body>
+        <div id="mainContent">
+            <div id="active" style="display: none">
+                <div class="mx-auto mt-3 px-3">
+                    <button id="getdata" class="btn btn-outline-primary btn-block my-4">데이터 확인</button>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th style="width: 140px">선택한 컬럼 idx</th>
+                                <td id="colnames"></td>
+                            </tr>
+                            <tr>
+                                <th style="width: 140px">선택한 아이디들</th>
+                                <td id="sheetname" class="text-break"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <div id="nc-message-app"></div> -->
+            </div>
+            <div id="inactive">
+                <div class="mx-auto py-5" style="max-width: 300px">
+                    <!-- <h4 class="text-white p-2" style="background-color: #696ffb;">MSG TOOL</h5> -->
+                    <p class="text-muted" style="font-size: 1.4rem">⚙ MESSAGING EXTENSION</p>
+                    <button class="btn btn-block btn-outline-danger" id="configureBtn">설정하기</button>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+            </div>
+        </div>
+        <span id="why"></span>
+    </body>
+</html>
