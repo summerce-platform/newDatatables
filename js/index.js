@@ -370,7 +370,7 @@
             stateSave : true,
              select: {
                     style: "multi"
-                }
+                },
             // 'stateSaveParams': function (settings, data) {
             //   data.columns.forEach (function (column) {
             //   delete column.visible;
