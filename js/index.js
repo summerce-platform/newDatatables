@@ -190,7 +190,10 @@
             bDeferRender: true,
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
-            oLanguage: datatableLangObj
+            oLanguage: datatableLangObj,
+            select: {
+                    style: "single"
+                }
           });
         } else {
           tableReference = $('#datatable').DataTable({
@@ -203,7 +206,10 @@
             processing : true,
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
-            oLanguage: datatableLangObj
+            oLanguage: datatableLangObj,
+             select: {
+                    style: "single"
+                }
           });
         }
       })
@@ -362,6 +368,9 @@
             data: tableData,
             order :[[1,"asc"]],
             stateSave : true,
+             select: {
+                    style: "single"
+                }
             // 'stateSaveParams': function (settings, data) {
             //   data.columns.forEach (function (column) {
             //   delete column.visible;
@@ -421,7 +430,10 @@
             bDeferRender: true,
             initComplete: datatableInitCallback,
             drawCallback: datatableDrawCallback,
-            oLanguage: datatableLangObj
+            oLanguage: datatableLangObj,
+         select: {
+                    style: "single"
+                }
           });
         }
       })
