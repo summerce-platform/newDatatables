@@ -192,7 +192,7 @@
             drawCallback: datatableDrawCallback,
             oLanguage: datatableLangObj,
             select: {
-                    style: "single"
+                    style: "multi"
                 }
           });
         } else {
@@ -208,7 +208,7 @@
             drawCallback: datatableDrawCallback,
             oLanguage: datatableLangObj,
              select: {
-                    style: "single"
+                    style: "multi"
                 }
           });
         }
@@ -369,7 +369,7 @@
             order :[[1,"asc"]],
             stateSave : true,
              select: {
-                    style: "single"
+                    style: "multi"
                 }
             // 'stateSaveParams': function (settings, data) {
             //   data.columns.forEach (function (column) {
@@ -432,7 +432,7 @@
             drawCallback: datatableDrawCallback,
             oLanguage: datatableLangObj,
          select: {
-                    style: "single"
+                    style: "multi"
                 }
           });
         }
