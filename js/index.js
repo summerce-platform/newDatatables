@@ -306,7 +306,7 @@
             };
           }
          //// 횟수 관련
-          else if (data[idx].title.includes('회수')===true || data[idx].title.includes('횟수')===true || data[idx].title.includes('재구매고객수')===true) {
+          else if (data[idx].title.includes('회수')===true || data[idx].title.includes('횟수')===true) {
             
             data[idx]["render"] = function (data, type, row) {
               if(type==="display"){
