@@ -309,7 +309,9 @@
           else if (data[idx].title.includes('회수')===true || data[idx].title.includes('횟수')===true) {
             
             data[idx]["render"] = function (data, type, row) {
-              return Math.floor(parseFloat(data.replaceAll(",","")))+freqSuffix;
+              if(type==="display"){
+                return Math.floor(parseFloat(data.replaceAll(",","")))+freqSuffix;
+              } else return data;
             };
           }
          //// 클릭수 관련
