@@ -314,6 +314,15 @@
               } else return data;
             };
           }
+         //// 횟수 관련
+          else if (data[idx].title.includes('재구매고객수')===true) {
+            
+            data[idx]["render"] = function (data, type, row) {
+              if(type==="display"){
+                return Math.floor(parseFloat(data.replaceAll(",","")))+'명';
+              } else return data;
+            };
+          }
          //// 클릭수 관련
          else if (data[idx].title.includes(myEtc)===true ) {
             
